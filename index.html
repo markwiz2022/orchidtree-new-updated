@@ -389,20 +389,20 @@
 </style>
 </head>
 <body>
-
-  <!-- NAV -->
-  <div class="nav" id="nav">
-    <a class="logo" href="#" aria-label="Orchid Tree home"><img src="images/logo.png" alt="Orchid Tree"></a>
-    <div class="links">
-      <a href="stays.html">Stays</a>
-      <a href="experiences.html">Experiences</a>
-      <a href="restaurant.html">Restaurant</a>
-      <a href="weddings.html">Weddings</a>
-      <a href="corporate.html">Corporate</a>
-      <a href="about.html">About</a>
-      <a href="https://wa.me/918088251913?text=Hi%20Orchid%20Tree%2C%20I%27d%20like%20to%20enquire%20about%20a%20stay." class="reserve" target="_blank" rel="noopener">WhatsApp</a>
+    <!-- NAV -->
+    <div class="nav" id="nav">
+      <a class="logo" href="index.html" aria-label="Orchid Tree home"><img src="images/logo.png" alt="Orchid Tree"></a>
+      <div class="links">
+        <a href="stays.html">Stays</a>
+        <a href="experiences.html">Experiences</a>
+        <a href="weddings.html">Weddings</a>
+        <a href="corporate.html">Corporate</a>
+        <a href="about.html">About</a>
+        <a href="https://wa.me/918088251913?text=Hi%20Orchid%20Tree%2C%20I%27d%20like%20to%20enquire%20about%20a%20stay." class="reserve" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
     </div>
-  </div>
+
+  
 
   <!-- HERO -->
   <div class="hero">
@@ -636,8 +636,8 @@
       </div>
       <div class="faq-list reveal">
         <div class="faq-item open"><button class="faq-q">How far is Orchid Tree from Bangalore?<span class="plus">+</span></button><div class="faq-a"><p>About forty-five minutes from Whitefield, in Bangalore Rural near Hoskote. The exact location is shared once your stay is confirmed, to keep the estate private.</p></div></div>
-        <div class="faq-item"><button class="faq-q">What's included in the price?<span class="plus">+</span></button><div class="faq-a"><p>Your room, breakfast, all estate activities, and amenities like the pool, steam room, and games. Lunch and dinner are served fresh at the restaurant and can be pre-ordered, and a massage can be added whenever you like.</p></div></div>
-        <div class="faq-item"><button class="faq-q">Is Orchid Tree all-inclusive?<span class="plus">+</span></button><div class="faq-a"><p>Breakfast is included with every stay. Lunch and dinner are a la carte from our restaurant, cooked fresh to order, so we recommend pre-ordering before you arrive.</p></div></div>
+        <div class="faq-item"><button class="faq-q">What's included in the price?<span class="plus">+</span></button><div class="faq-a"><p>Your room charge includes all meals prepared to your preference, full access to the estate, and one full-body massage, while accompanying guests enjoy a traditional Kansa foot massage.</p></div></div>
+        <div class="faq-item"><button class="faq-q">Is Orchid Tree all-inclusive?<span class="plus">+</span></button><div class="faq-a"><p>Your room charge includes all meals prepared to your preference, full access to the estate, and one full-body massage, while accompanying guests enjoy a traditional Kansa foot massage.</p></div></div>
         <div class="faq-item"><button class="faq-q">Can I bring alcohol?<span class="plus">+</span></button><div class="faq-a"><p>Yes. Orchid Tree is proudly BYOB, enjoyed in our designated outdoor lounge areas.</p></div></div>
         <div class="faq-item"><button class="faq-q">Are pets allowed?<span class="plus">+</span></button><div class="faq-a"><p>Pets are welcome in the cottages and family rooms. The Couple Rooms by the pool are kept pet-free for guests with allergies.</p></div></div>
         <div class="faq-item"><button class="faq-q">Are the cottages different from the poolside rooms?<span class="plus">+</span></button><div class="faq-a"><p>Yes, and meaningfully so. The garden cottages are built around living trees with open-to-sky baths and private steam rooms. The poolside rooms are brighter and overlook the water.</p></div></div>
@@ -1122,8 +1122,8 @@
       incoming.style.opacity = '1';
       layers[MG.cur].style.opacity = '0';
       MG.cur = 1 - MG.cur;
-      var cnt = document.getElementById('mCount') || el('mCount'); if(cnt) cnt.textContent = (target + 1) + ' / ' + n;
-      var thumbs = document.getElementById('mThumbs') || el('mThumbs');
+      var cnt = el('mCount'); if(cnt) cnt.textContent = (target + 1) + ' / ' + n;
+      var thumbs = el('mThumbs');
       if(thumbs){ var a = thumbs.querySelector('.th.active'); if(a) a.classList.remove('active');
         var t = thumbs.querySelector('.th[data-i="' + target + '"]'); if(t) t.classList.add('active'); }
       
@@ -1136,9 +1136,10 @@
     }
     function mgTimer(){ 
       mgStop();
+      // Only set generic timer if current layer is NOT a video
       var curUrl = MG.urls[MG.i];
       if (curUrl && (curUrl.toLowerCase().endsWith('.mp4') || curUrl.toLowerCase().endsWith('.webm'))) {
-        // video handles its own advancement
+        // Let the video onended handler take care of it
       } else if(MG.urls.length > 1) {
         MG.timer = setInterval(function(){ mgGo(MG.i + 1); }, 3200);
       }
@@ -1147,40 +1148,39 @@
     function mgStart(urls){
       mgStop(); MG.urls = urls || []; MG.i = 0; MG.cur = 0;
       var layers = mgLayers();
-      var vid = setLayer(layers[0], MG.urls[0]);
+      var vid = setLayer(layers[0], urls[0]);
       layers[0].style.opacity = '1';
       setLayer(layers[1], '');
       layers[1].style.opacity = '0';
-      MG.urls.forEach(function(u){ 
-        if(u && !u.toLowerCase().endsWith('.mp4') && !u.toLowerCase().endsWith('.webm')){
+      urls.forEach(function(u){ 
+        if(!u.toLowerCase().endsWith('.mp4') && !u.toLowerCase().endsWith('.webm')){
           var im = new Image(); im.src = u; 
         }
       });
-      var multi = MG.urls.length > 1;
+      var multi = urls.length > 1;
+      el('mPrev').style.display = multi ? '' : 'none';
+      el('mNext').style.display = multi ? '' : 'none';
+      el('mCount').style.display = multi ? '' : 'none';
+      el('mCount').textContent = '1 / ' + urls.length;
+      var thumbs = el('mThumbs');
+      thumbs.innerHTML = multi
+        ? urls.map(function(u, i){ 
+            if(u.toLowerCase().endsWith('.mp4') || u.toLowerCase().endsWith('.webm')){
+              return '<div class="th' + (i === 0 ? ' active' : '') + '" data-i="' + i + '" style="background-color:#000; position:relative;"><div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:#fff; font-size:10px;">▶</div></div>';
+            }
+            return '<div class="th' + (i === 0 ? ' active' : '') + '" data-i="' + i + '" style="background-image:url(\'' + esc(u) + '\')"></div>'; 
+          }).join('')
+        : '';
+      Array.prototype.forEach.call(thumbs.querySelectorAll('.th'), function(th){
+        th.addEventListener('click', function(){ mgGo(+th.getAttribute('data-i')); mgTimer(); });
+      });
       
-      var _elPrev = document.getElementById('mPrev') || (typeof el !== 'undefined' ? el('mPrev') : null);
-      var _elNext = document.getElementById('mNext') || (typeof el !== 'undefined' ? el('mNext') : null);
-      var _elCount = document.getElementById('mCount') || (typeof el !== 'undefined' ? el('mCount') : null);
-      var _elThumbs = document.getElementById('mThumbs') || (typeof el !== 'undefined' ? el('mThumbs') : null);
-      
-      if(_elPrev) _elPrev.style.display = multi ? '' : 'none';
-      if(_elNext) _elNext.style.display = multi ? '' : 'none';
-      if(_elCount) {
-        _elCount.style.display = multi ? '' : 'none';
-        _elCount.textContent = '1 / ' + MG.urls.length;
+      if(vid && multi) {
+        vid.onended = function() { mgGo(MG.i + 1); };
+      } else if(multi) {
+        mgTimer();
       }
-      
-      if(_elThumbs) {
-          _elThumbs.innerHTML = multi
-            ? MG.urls.map(function(u, i){ 
-                if(u && (u.toLowerCase().endsWith('.mp4') || u.toLowerCase().endsWith('.webm'))){
-                  return '<div class="th' + (i === 0 ? ' active' : '') + '" data-i="' + i + '" style="background-color:#000; position:relative;"><div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:#fff; font-size:10px;">▶</div></div>';
-                }
-                return '<div class="th' + (i === 0 ? ' active' : '') + '" data-i="' + i + '" style="background-image:url(\'' + esc(u) + '\')"></div>'; 
-              }).join('')
-            : '';
-          Array.prototype.forEach.call(_elThumbs.querySelectorAll('.th'), function(th){
-            th.addEventListener('click', function(){ mgGo(+th.getAttribute('data-i')); mgTimer(); });
+    });
           });
       }
       
