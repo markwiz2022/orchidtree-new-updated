@@ -980,14 +980,18 @@
     // ---- EXPERIENCES shorts (built from real photos) ----
     var U = 'https://orchidtree.in/uploads/';
     var SHORTS = [
-      { lbl:'Ozone pool', img:'images/ozone-pool.jpg' },
-      { lbl:'Farm visit & buggy ride', img:U+'Image8_scaled_jpg_ec00384f49.webp' },
-      { lbl:'Bonfire & stargazing', img:U+'Experience_section_jpg_afb1c77479.webp' },
-      { lbl:'Steam & deep rest', img:U+'bodhi_tree_5c9ce0f7ce.webp' },
-      { lbl:'Karaoke & music corner', img:U+'Copy_of_2_a5beee287f.jpg' },
-      { lbl:'Trampoline & games', img:U+'Image_6_1024x1536_bk_923d98c089.jpg' },
-      { lbl:'Birdwatching & trails', img:U+'chandana_2_00966a14a0.png' },
-      { lbl:'Movies in the hall', img:U+'datura_1_a0ba781d1b.png' },
+      { lbl:'Ozone pool',                 img:'images/ozone-pool.jpg' },
+      { lbl:'Farm visit',                 img:'images/uploads/farm_0K1A1757.JPG' },
+      { lbl:'Bonfire & stargazing',       img:'images/uploads/bonfire.jpg' },
+      { lbl:'Steam & open-sky showers',   img:'images/uploads/steam.jpg' },
+      { lbl:'Karaoke & music corner',     img:'images/uploads/karaoke_0K1A7846.JPG' },
+      { lbl:'Trampoline & games',         img:'images/uploads/trampoline_0K1A9822.JPG' },
+      { lbl:'Birdwatching & trails',      img:'images/uploads/forest_Test-8274806.jpg' },
+      { lbl:'Movies in the hall',         img:'images/uploads/movie.jpg' },
+      { lbl:'Carrom',                     img:'images/uploads/chess_0K1A9971.JPG' },
+      { lbl:'Kansa',                      img:'images/uploads/kansa.jpg' },
+      { lbl:'Billiards',                  img:'images/uploads/Pool_Table_74b3551af2.JPG' },
+      { lbl:'Chess',                      img:'images/uploads/chess_0K1A9971.JPG' }
     ];
     document.getElementById('expShorts').innerHTML = SHORTS.map(function(s){
       return '<div class="short"><div class="ph" style="background-image:url(\''+esc(s.img)+'\')"></div><div class="scrim"></div><div class="lbl">'+esc(s.lbl)+'</div></div>';
