@@ -71,36 +71,25 @@ sections: [
     allInclusive: {
       eyebrow: "Included with every stay",
       title: "What your stay holds",
-      // images mapped to the property's own experience-section photos.
-      // Millet has no matching photo on the site, so it stays on the placeholder.
-      // short = revealed on hover. moreUrl = where the "More" link goes
-      // (null = PLACEHOLDER, renders a disabled-looking link until you set a page).
-      // meals are NOT here — they are pre-booked separately (see foodSection)
       items: [
-        { label: "Breakfast, every morning",
-          short: "A plated breakfast to start each day, included with your stay.",
-          moreUrl: null, // PLACEHOLDER
-          imageUrl: "images/uploads/Copy_of_Barbeque_03_cf30f0f667.jpg" },
-        { label: "Ozone-treated pool",
-          short: "A clean, ozone-treated pool.",
-          moreUrl: null, // PLACEHOLDER
-          imageUrl: "images/uploads/Copy_of_Pool_37_958d54313f.jpg" },
-        { label: "Steam room and open-sky showers",
-          short: "Steam, and showers open to the sky.",
-          moreUrl: null, // PLACEHOLDER
-          imageUrl: "images/uploads/Image8_scaled_jpg_ec00384f49.webp" },
-        { label: "Millet snack station",
-          short: "Millet snacks, tea, coffee, and water, on the house.",
-          moreUrl: null, // PLACEHOLDER
-          imageUrl: null }, // no matching photo on site
-        { label: "Indoor games and open-air gym",
-          short: "Chess, carrom, table tennis, billiards, a gym.",
-          moreUrl: null, // PLACEHOLDER
-          imageUrl: "images/uploads/Copy_of_2_a5beee287f.jpg" },
-        { label: "BYOB lounge",
-          short: "Bring your own bottle to the outdoor lounge.",
-          moreUrl: null, // PLACEHOLDER
-          imageUrl: "images/uploads/Image_6_1024x1536_bk_923d98c089.jpg" },
+{ label: "Ozone Pool", short: "", moreUrl: null, imageUrl: "images/ozone-pool.jpg" },
+{ label: "Steam Room", short: "", moreUrl: null, imageUrl: "images/uploads/steam.jpg" },
+{ label: "Head Massage", short: "", moreUrl: null, imageUrl: "" },
+{ label: "Leg Massage", short: "", moreUrl: null, imageUrl: "images/uploads/kansa.jpg" },
+{ label: "Farm Visit", short: "", moreUrl: null, imageUrl: "images/uploads/farm_0K1A1757.JPG" },
+{ label: "Meet Our Pets", short: "", moreUrl: null, imageUrl: "" },
+{ label: "Bonfire", short: "", moreUrl: null, imageUrl: "images/uploads/bonfire.jpg" },
+{ label: "Stargazing", short: "", moreUrl: null, imageUrl: "" },
+{ label: "Bird Watching", short: "", moreUrl: null, imageUrl: "images/uploads/forest_Test-8274806.jpg" },
+{ label: "Anniversary Celebration", short: "", moreUrl: null, imageUrl: "" },
+{ label: "Birthday Celebration", short: "", moreUrl: null, imageUrl: "images/uploads/bday celeb.jpeg" },
+{ label: "Billiards", short: "", moreUrl: null, imageUrl: "images/uploads/Pool_Table_74b3551af2.JPG" },
+{ label: "Trampoline", short: "", moreUrl: null, imageUrl: "images/uploads/trampoline_0K1A9822.JPG" },
+{ label: "Movie in the Hall", short: "", moreUrl: null, imageUrl: "images/uploads/movie.jpg" },
+{ label: "Karaoke", short: "", moreUrl: null, imageUrl: "images/uploads/karaoke_0K1A7846.JPG" },
+{ label: "Chess", short: "", moreUrl: null, imageUrl: "images/uploads/chess.jpg" },
+{ label: "Carrom", short: "", moreUrl: null, imageUrl: "images/uploads/carrom.jpg" },
+{ label: "Book Reading", short: "", moreUrl: null, imageUrl: "images/uploads/book reading.jpg" }
       ],
     },
 
