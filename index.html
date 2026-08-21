@@ -992,10 +992,10 @@
       { lbl:'Trampoline & games',         img:'images/uploads/trampoline_0K1A9822.JPG' },
       { lbl:'Birdwatching & trails',      img:'images/uploads/forest_Test-8274806.jpg' },
       { lbl:'Movies in the hall',         img:'images/uploads/movie.jpg' },
-      { lbl:'Carrom',                     img:'images/uploads/chess_0K1A9971.JPG' },
+      { lbl:'Carrom',                     img:'images/uploads/carrom.jpg' },
       { lbl:'Kansa',                      img:'images/uploads/kansa.jpg' },
       { lbl:'Billiards',                  img:'images/uploads/Pool_Table_74b3551af2.JPG' },
-      { lbl:'Chess',                      img:'images/uploads/chess_0K1A9971.JPG' }
+      { lbl:'Chess',                      img:'images/uploads/chess.jpg' }
     ];
     document.getElementById('expShorts').innerHTML = SHORTS.map(function(s){
       return '<div class="short"><div class="ph" style="background-image:url(\''+esc(s.img)+'\')"></div><div class="scrim"></div><div class="lbl">'+esc(s.lbl)+'</div></div>';
@@ -1114,7 +1114,7 @@
     function setLayer(layer, url) {
       if (url && (url.toLowerCase().endsWith('.mp4') || url.toLowerCase().endsWith('.webm'))) {
         layer.style.backgroundImage = 'none';
-        layer.innerHTML = '<video src="'+url+'" autoplay muted playsinline style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0; pointer-events:none;"></video>';
+        layer.innerHTML = '<video src="'+url+'" autoplay muted playsinline style="width:100%; height:100%; object-fit:contain; position:absolute; top:0; left:0; pointer-events:none;"></video>';
         return layer.querySelector('video');
       } else {
         layer.innerHTML = '';

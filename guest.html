@@ -712,7 +712,7 @@
     function setLayer(layer, url) {
       if (url && (url.toLowerCase().endsWith('.mp4') || url.toLowerCase().endsWith('.webm'))) {
         layer.style.backgroundImage = 'none';
-        layer.innerHTML = '<video src="'+url+'" autoplay muted playsinline style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0; pointer-events:none;"></video>';
+        layer.innerHTML = '<video src="'+url+'" autoplay muted playsinline style="width:100%; height:100%; object-fit:contain; position:absolute; top:0; left:0; pointer-events:none;"></video>';
         return layer.querySelector('video');
       } else {
         layer.innerHTML = '';
