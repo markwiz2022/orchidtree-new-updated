@@ -1,0 +1,118 @@
++- Section vertical rhythm: `96px` desktop, `60px` mobile. Editorial sections breathe more (`clamp(80px,14vh,160px)`).
++- **Mobile-first.** Everything collapses to a single column at `820px`. Touch targets ≥ 44px.
++A fast, static, mobile-first marketing site built as hand-written HTML, CSS, and vanilla JavaScript on a shared design system. No build step, no framework. Content for rooms and dining is data-driven from small shared modules so a value is edited once.
++Rank for **local, high-intent searches near Bangalore** (weekend getaways, resorts, farm-to-table dining, intimate weddings, corporate offsites, things to do) and convert that traffic into enquiries and bookings. The strategy is: a fast, well-structured, mobile-first site, one strong landing page per intent, supported by a content engine (the Journal) that captures informational searches and links into the money pages.
++- **Mobile-first**, responsive, 44px touch targets.
++*Prepared as a handover reference for the Orchid Tree team. The website foundations are strong, well-structured, fast, mobile-first, and rich in structured data. The biggest wins from here are off the page: Google Business Profile, Search Console, a live domain decision, and a steady stream of Journal content.*
++    function toggleFab(){ if(fab){ if(window.scrollY > window.innerHeight * 0.85) fab.classList.add('show'); else fab.classList.remove('show'); } }
++    window.addEventListener('scroll', toggleFab, {passive:true}); toggleFab();
++              <p>All interactive elements are at minimum 44px in their tap target. The WhatsApp pill, FAQ triggers, and buttons all meet this. On mobile, stacked buttons never touch.</p>
++          <p class="section-lead">Generous negative space is part of the brand. When unsure, add air. Asymmetry over symmetry. Mobile-first, always.</p>
++            <p>The standard horizontal gutter. Applied to every section. Scales fluidly from mobile to wide screens.</p>
++            <span class="value">96px desktop / 60px mobile</span>
++            <p>Every interactive element meets the 44px minimum touch target on mobile. No exceptions.</p>
++            <h4>Mobile-first</h4>
++    function toggleFab(){ if(fab){ if(window.scrollY > window.innerHeight * 0.85) fab.classList.add('show'); else fab.classList.remove('show'); } }
++    window.addEventListener('scroll', toggleFab, {passive:true}); toggleFab();
++    function toggleFab(){ if(fab){ if(window.scrollY > window.innerHeight * 0.85) fab.classList.add('show'); else fab.classList.remove('show'); } }
++    window.addEventListener('scroll', toggleFab, {passive:true}); toggleFab();
++      q.addEventListener('click', function(){ q.parentElement.classList.toggle('open'); });
++     (demo .controls / .toggle styles dropped; not-found + state styles added) */
++  .mobilebar{display:none;}
++    .carousel-nav{display:none;} /* touch scroll is obvious on mobile */
++    .mobilebar{display:flex;position:fixed;bottom:0;left:0;right:0;background:var(--green);color:#fff;padding:16px 20px;justify-content:space-between;align-items:center;z-index:40;}
++    .mobilebar .amt{font-family:var(--serif);font-size:18px;}
++    .mobilebar button{background:#fff;color:var(--green);border:none;padding:12px 24px;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:700;border-radius:var(--radius-sm);}
++    <div class="mobilebar">
++      <div><div style="font-size:9px;letter-spacing:1px;text-transform:uppercase;opacity:.85;">Total</div><div class="amt" id="mobileAmt"></div></div>
++      <button id="mobileConfirm">Confirm</button>
++      document.getElementById('mobileAmt').textContent = S.rupees(S.grandTotal(booking));
++      const mobileBtn = document.getElementById('mobileConfirm');
++        mobileBtn.textContent = 'Confirmed'; mobileBtn.disabled = true;
++        mobileBtn.textContent = 'Declined'; mobileBtn.disabled = true;
++        mobileBtn.textContent = 'Expired'; mobileBtn.disabled = true;
++          cbtn.classList.toggle('disabled', !ok);
++          mobileBtn.disabled = !ok;
++        mobileBtn.onclick = guardedConfirm;
++      <p class="csub">A complete, mobile-first marketing site with a shared design system, an SEO-ready blog, a dining pre-order journey, and a full brand guideline. Everything you need to run it, grow it, and hand it on.</p>
++    <p class="lead">A fast, premium, mobile-first website built as hand-written HTML, CSS, and vanilla JavaScript on one shared design system. No framework, no build step, so it loads quickly and is simple to maintain. The work covers the full public site, a content engine for SEO, a guest dining journey, staff tooling, a complete brand guideline, and an SEO handover.</p>
++          <li>Fast, mobile-first, HTTPS</li>
++A complete, mobile-first marketing site with a shared
++A fast, premium, mobile-first website built as hand-written HTML, CSS, and vanilla
++   Fast, mobile-first, HTTPS                         Decide the live domain and update all URLs,
++    function toggleFab(){ if(fab){ if(window.scrollY > window.innerHeight * 0.85) fab.classList.add('show'); else fab.classList.remove('show'); } }
++    window.addEventListener('scroll', toggleFab, {passive:true}); toggleFab();
++    /* on the stacked mobile bar the popovers span the bar's width */
++    function toggleFab(){ if(fab){ if(window.scrollY > window.innerHeight * 0.85) fab.classList.add('show'); else fab.classList.remove('show'); } }
++    window.addEventListener('scroll', toggleFab, {passive:true}); toggleFab();
++  .toggle{display:flex;gap:10px;max-width:440px;}
++  .toggle button{flex:1;padding:13px;border:1px solid #d6cfc0;background:var(--card);color:var(--green);cursor:pointer;font-size:11px;letter-spacing:1.3px;text-transform:uppercase;font-family:var(--sans);font-weight:600;border-radius:var(--radius-sm);transition:all .18s;}
++  .toggle button.active{background:var(--green);color:#fff;border-color:var(--green);}
++  .mobilebar{display:none;}
++    .toggle{max-width:none;}
++    .mobilebar{display:flex;position:fixed;bottom:0;left:0;right:0;background:var(--green);color:#fff;padding:16px 20px;justify-content:space-between;align-items:center;z-index:40;}
++    .mobilebar .amt{font-family:var(--serif);font-size:18px;}
++    .mobilebar button{background:#fff;color:var(--green);border:none;padding:12px 24px;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:700;border-radius:var(--radius-sm);}
++      <strong>Wireframe v7.</strong> Booking card is now compact and sits beside the rooms only; everything below runs full width. Guests block removed from the card (no longer repeated), and the invoice now leads with the free food credit. Toggle room count, tap a room, resize for mobile.
++    <div class="toggle">
++  <div class="mobilebar">
++    <div><div style="font-size:9px;letter-spacing:1px;text-transform:uppercase;opacity:.85;">Total</div><div class="amt" id="mobileAmt">Rs 15,340</div></div>
++    document.getElementById('b1').classList.toggle('active',n===1);
++    document.getElementById('b6').classList.toggle('active',n===6);
++    document.getElementById('mobileAmt').textContent=`Rs ${grand.toLocaleString('en-IN')}`;
++      q.parentElement.classList.toggle('open');
++    /* ── TOGGLE CHIPS ── */
++    .toggle-row {
++    .toggle-label {
++    .toggle-switch {
++    .toggle-switch input { opacity: 0; width: 0; height: 0; position: absolute; }
++    .toggle-thumb {
++    .toggle-thumb::before {
++    .toggle-switch input:checked + .toggle-thumb { background: var(--green); }
++    .toggle-switch input:checked + .toggle-thumb::before { transform: translateX(20px); }
++          <div class="toggle-row">
++            <span class="toggle-label">Kids meals needed</span>
++            <label class="toggle-switch">
++              <input type="checkbox" id="kidsMealsToggle">
++              <span class="toggle-thumb"></span>
++      state.kidsNeeded = document.getElementById('kidsMealsToggle').checked;
++          chip.classList.toggle('selected', state.preferences.indexOf(pref) > -1);
++        c.classList.toggle('active',
++          item.classList.toggle('selected', state.addons.indexOf(addon) > -1);
++      /* Kids meals toggle */
++      var toggle = document.getElementById('kidsMealsToggle');
++      if (toggle) {
++        toggle.checked = state.kidsNeeded;
++        toggle.addEventListener('change', function () {
++          state.kidsNeeded = toggle.checked;
++          document.getElementById('kidsCountRow').classList.toggle('visible', state.kidsNeeded);
++    /* ── Toggle switch ── */
++    .toggle-wrap {
++    .toggle-label {
++    .toggle {
++    .toggle input {
++    .toggle-track {
++    .toggle-track::after {
++    .toggle input:checked + .toggle-track {
++    .toggle input:checked + .toggle-track::after {
++    /* availability toggle row */
++          <!-- Availability toggle -->
++              <label class="toggle">
++                <span class="toggle-track"></span>
++        + '<label class="toggle-wrap" title="' + (available ? 'Mark as not available' : 'Mark as available') + '">'
++        + '<span class="toggle-label">' + (available ? 'Available' : 'Not available') + '</span>'
++        + '<span class="toggle">'
++        + '<input type="checkbox" ' + (available ? 'checked' : '') + ' onchange="toggleAvailability(\'' + d.id + '\', this.checked)">'
++        + '<span class="toggle-track"></span>'
++        + '<button class="publish-btn ' + (published ? 'published' : 'draft') + '" onclick="togglePublish(\'' + d.id + '\')">'
++  function toggleAvailability(id, val) {
++  function togglePublish(id) {
++    function toggleFab(){ if(fab){ if(window.scrollY > window.innerHeight * 0.85) fab.classList.add('show'); else fab.classList.remove('show'); } }
++    window.addEventListener('scroll', toggleFab, {passive:true}); toggleFab();
++    function toggleFab(){ if(fab){ if(window.scrollY > window.innerHeight * 0.9) fab.classList.add('show'); else fab.classList.remove('show'); } }
++    function onScroll(){ navScroll(); toggleFab(); setProgress(); if(!ticking){ ticking = true; requestAnimationFrame(frame); } }
++    navScroll(); toggleFab(); setProgress(); frame();
++    function toggleFab(){ if(fab){ if(window.scrollY > window.innerHeight * 0.85) fab.classList.add('show'); else fab.classList.remove('show'); } }
++    window.addEventListener('scroll', toggleFab, {passive:true}); toggleFab();
++    function toggleFab(){ if(fab){ if(window.scrollY > window.innerHeight * 0.85) fab.classList.add('show'); else fab.classList.remove('show'); } }
++    window.addEventListener('scroll', toggleFab, {passive:true}); toggleFab();

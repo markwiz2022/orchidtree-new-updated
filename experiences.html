@@ -306,6 +306,11 @@
   .nav.solid .links a{color:var(--ink);text-shadow:none;}
   .nav.solid .links .reserve{border-color:var(--green);color:var(--green);}
   .nav.solid .links .reserve:hover{background:var(--green);color:#fff;}
+
+@media (max-width: 820px) {
+  .nav { padding: 12px var(--pad); flex-direction: column; gap: 12px; }
+  .nav .links { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; font-size: 10px; }
+}
 </style>
 </head>
 <body>
@@ -313,6 +318,7 @@
     <div class="nav" id="nav">
       <a class="logo" href="index.html" aria-label="Orchid Tree home"><img src="images/logo.png" alt="Orchid Tree"></a>
       <div class="links">
+        <a href="index.html">Home</a>
         <a href="stays.html">Stays</a>
         <a href="experiences.html">Experiences</a>
         <a href="weddings.html">Weddings</a>
@@ -551,6 +557,7 @@
       </div>
       <div class="col">
         <h5>Explore</h5>
+        <a href="index.html">Home</a>
         <a href="stays.html">Our Stays</a><a href="experiences.html">Experiences</a><a href="weddings.html">Weddings</a><a href="about.html">About</a><a href="corporate.html">Corporate</a><a href="host-with-us.html">Host with Us</a><a href="blog.html">Journal</a><a href="faq.html">FAQ</a>
       </div>
       <div class="col">

@@ -339,6 +339,11 @@
     .mobilebar .amt{font-family:var(--serif);font-size:18px;}
     .mobilebar button{background:#fff;color:var(--green);border:none;padding:12px 24px;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:700;border-radius:var(--radius-sm);}
   }
+
+@media (max-width: 820px) {
+  .nav { padding: 12px var(--pad); flex-direction: column; gap: 12px; }
+  .nav .links { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; font-size: 10px; }
+}
 </style>
 </head>
 <body>
@@ -356,6 +361,7 @@
     <div class="nav" id="nav">
       <a class="logo" href="index.html" aria-label="Orchid Tree home"><img src="images/logo.png" alt="Orchid Tree"></a>
       <div class="links">
+        <a href="index.html">Home</a>
         <a href="stays.html">Stays</a>
         <a href="experiences.html">Experiences</a>
         <a href="weddings.html">Weddings</a>
@@ -458,7 +464,12 @@
         .ni h4{font-family:var(--serif);font-size:18px;color:var(--ink);font-weight:600;margin:0 0 3px;line-height:1.2;}
         .ni p{font-size:13px;color:var(--body);line-height:1.5;margin:0;}
         @media(max-width:820px){.notincl-grid{grid-template-columns:1fr;}}
-      </style>
+      
+@media (max-width: 820px) {
+  .nav { padding: 12px var(--pad); flex-direction: column; gap: 12px; }
+  .nav .links { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; font-size: 10px; }
+}
+</style>
       <div class="fullsec">
         <div class="eyebrow">Good to know</div>
         <h2>Kept simple, on purpose</h2>
