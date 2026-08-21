@@ -19,19 +19,34 @@
     // built-in terms modal below is shown (sourced from the property's policy page).
     termsUrl: "", // optional external page; leave blank to use the modal
     terms: {
-      sections: [
-        { title: "Terms and conditions", items: [
-          "25% advance payment is required to confirm the booking. Guests may have the option to make full payment as well.",
-            "Your booking is confirmed once the advance is paid.",
-            "Pradeep will share the final Terms & Conditions content.",
-          "Full refund if cancelled 48 hours or more before check-in. No refund after that.",
-          "Couple Rooms sleep 2 adults + 1 child up to 8 years, on one queen bed. No extra bed.",
-          "Plated meals only. No outside food. No room service.",
-          "We do not sell alcohol. Personal beverages only in designated areas.",
-          "Pets are welcome only in pet-friendly rooms and must be leashed in common areas."
-        ] }
-      ],
-    },
+sections: [
+{ title: "BOOKING AND CANCELLATION", items: [
+"Your booking is confirmed once the full amount is paid on this page.",
+"Full refund on cancellations made 48 hours or more before check-in.",
+"No refund for cancellations within 48 hours of check-in, no-shows or early departures."
+] },
+{ title: "ROOM OCCUPANCY", items: [
+"Couple Rooms accommodate 2 adults + 1 child up to 8 years, sharing one American-standard queen bed.",
+"No extra bed, mattress or additional sleeping arrangement is provided."
+] },
+{ title: "AT THE PROPERTY", items: [
+"Every adult guest must present a valid government photo ID at check-in.",
+"Drivers, caretakers and personal staff are not allowed inside unless a separate room is booked for them.",
+"Pets are welcome only in pet-friendly rooms. Please carry a valid vaccination certificate.",
+"Pets must be kept on a leash in all common areas."
+] },
+{ title: "DINING, ALCOHOL AND SMOKING", items: [
+"Outside food and deliveries are not permitted. There is no room service.",
+"Orchid Tree does not sell or serve alcohol. Personal beverages may be enjoyed only in designated areas and remain the guest's responsibility.",
+"All rooms are non-smoking. Smoking is allowed only in designated outdoor zones."
+] },
+{ title: "PHOTOGRAPHY AND VIDEOGRAPHY", items: [
+"Personal photography is welcome.",
+"Commercial photography, pre-wedding shoots, wedding photography, product launches, or any shoot involving outside photographers or videographers must be informed in advance, approved by Orchid Tree, and will attract additional charges.",
+"Orchid Tree may photograph or record guests only with their consent, and approved content may be used for business development."
+] }
+]
+},
 
     // credibility band under the hero - rendered as highlighted pillars, not plain text
     credibility: {
@@ -175,15 +190,13 @@
 
     // policies, plain and calm, shown in the booking card
     policies: [
-      "25% advance payment is required to confirm the booking. Guests may have the option to make full payment as well.",
-            "Your booking is confirmed once the advance is paid.",
-            "Pradeep will share the final Terms & Conditions content.",
-      "Full refund if cancelled 48 hours or more before check-in. No refund after that.",
-      "Couple Rooms sleep 2 adults + 1 child up to 8 years, on one queen bed. No extra bed.",
-      "Plated meals only. No outside food. No room service.",
-      "We do not sell alcohol. Personal beverages only in designated areas.",
-      "Pets are welcome only in pet-friendly rooms and must be leashed in common areas."
-    ],
+"Your booking is confirmed once the full amount is paid on this page.",
+"Full refund if cancelled 48 hours or more before check-in. No refund after that.",
+"Couple Rooms sleep 2 adults + 1 child up to 8 years, on one queen bed. No extra bed.",
+"Plated meals only. No outside food. No room service.",
+"We do not sell alcohol. Personal beverages only in designated areas.",
+"Pets are welcome only in pet-friendly rooms and must be leashed in common areas."
+],
 
     // all five real reviews held here; three are placed on the page (see below)
     reviews: [
