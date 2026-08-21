@@ -21,7 +21,9 @@
     terms: {
       sections: [
         { title: "Terms and conditions", items: [
-          "Your booking is confirmed once the full amount is paid on this page.",
+          "25% advance payment is required to confirm the booking. Guests may have the option to make full payment as well.",
+            "Your booking is confirmed once the advance is paid.",
+            "Pradeep will share the final Terms & Conditions content.",
           "Full refund if cancelled 48 hours or more before check-in. No refund after that.",
           "Couple Rooms sleep 2 adults + 1 child up to 8 years, on one queen bed. No extra bed.",
           "Plated meals only. No outside food. No room service.",
@@ -110,6 +112,11 @@
           { label: "Volleyball", icon: "ball" },
           { label: "Cricket", icon: "bat" }
         ] },
+                { label: "The Commons / Outdoor Activities", items: [
+          { label: "Football", icon: "ball" },
+          { label: "Volleyball", icon: "ball" },
+          { label: "Cricket", icon: "bat" }
+        ] },
         { label: "Around the estate", items: [
           { label: "Estate Farm Visit — approximately 1 km away", icon: "leaf" },
           { label: "Jungle Walk", icon: "trail" },
@@ -175,7 +182,9 @@
 
     // policies, plain and calm, shown in the booking card
     policies: [
-      "Your booking is confirmed once the full amount is paid on this page.",
+      "25% advance payment is required to confirm the booking. Guests may have the option to make full payment as well.",
+            "Your booking is confirmed once the advance is paid.",
+            "Pradeep will share the final Terms & Conditions content.",
       "Full refund if cancelled 48 hours or more before check-in. No refund after that.",
       "Couple Rooms sleep 2 adults + 1 child up to 8 years, on one queen bed. No extra bed.",
       "Plated meals only. No outside food. No room service.",

@@ -154,7 +154,7 @@ for html_file in html_files:
             content = content.replace('<body>', '<body>\n' + NAV_HTML)
             
     # If index.html, do Task 11, 12
-    if html_file == 'index.html':
+    if False:
         content = re.sub(index_incl_pattern, index_incl_replacement, content, flags=re.DOTALL)
         
     if content != orig:
