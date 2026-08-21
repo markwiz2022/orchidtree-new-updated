@@ -8,8 +8,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Mulish:wght@400;500;600;700&family=Sacramento&display=swap" rel="stylesheet">
 <style>
-
-}
   /* ── Styles ported verbatim from orchidtree-dynamic-page-wireframe.html ──
      (demo .controls / .toggle styles dropped; not-found + state styles added) */
   :root{
@@ -345,24 +343,25 @@
 @media (max-width: 820px) {
 }
 @media (max-width: 820px) {
-.nav { padding: 12px var(--pad); flex-direction: column; gap: 12px; }
+  .nav { padding: 12px var(--pad); flex-direction: column; gap: 12px; }
 }
-.nav{position:fixed;top:0;left:0;right:0;z-index:90;display:flex;align-items:center;justify-content:space-between;padding:24px var(--pad);background:linear-gradient(to bottom,rgba(20,16,12,.55),rgba(20,16,12,0));transition:background .3s ease,padding .3s ease,box-shadow .3s ease;}
-.nav .logo{display:flex;align-items:center;}
-.nav .logo img{height:72px;width:auto;display:block;filter:brightness(0) invert(1) drop-shadow(0 1px 6px rgba(0,0,0,.4));transition:height .3s ease,filter .3s ease;}
-.nav.solid .logo img{height:52px;filter:none;}
-.nav .links{display:flex;gap:30px;align-items:center;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-weight:600;}
-.nav .links a{color:rgba(255,255,255,.9);text-decoration:none;text-shadow:0 1px 8px rgba(0,0,0,.45);transition:opacity .2s ease,color .3s ease,text-shadow .3s ease;}
-.nav .links a:not(.reserve){position:relative;}
-.nav .links a:not(.reserve)::after{content:"";position:absolute;left:2px;right:2px;bottom:-5px;height:1.5px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .28s ease;}
-.nav .links a:not(.reserve):hover::after{transform:scaleX(1);}
-.nav .links a:hover{opacity:1;}
-.nav .links .reserve{border:1px solid rgba(255,255,255,.6);padding:9px 18px;border-radius:var(--radius-sm);transition:all .2s ease;}
-.nav .links .reserve:hover{background:#fff;color:var(--ink);opacity:1;}
-.nav.solid{background:rgba(247,243,234,.96);box-shadow:0 2px 22px rgba(67,56,43,.09);padding-top:15px;padding-bottom:15px;backdrop-filter:blur(6px);}
-.nav.solid .links a{color:var(--ink);text-shadow:none;}
-.nav.solid .links .reserve{border-color:var(--green);color:var(--green);}
-.nav.solid .links .reserve:hover{background:var(--green);color:#fff;}
+  .nav{position:fixed;top:0;left:0;right:0;z-index:90;display:flex;align-items:center;justify-content:space-between;padding:24px var(--pad);background:linear-gradient(to bottom,rgba(20,16,12,.55),rgba(20,16,12,0));transition:background .3s ease,padding .3s ease,box-shadow .3s ease;}
+  .nav .logo{display:flex;align-items:center;}
+  .nav .logo img{height:72px;width:auto;display:block;filter:brightness(0) invert(1) drop-shadow(0 1px 6px rgba(0,0,0,.4));transition:height .3s ease,filter .3s ease;}
+  .nav.solid .logo img{height:52px;filter:none;}
+  .nav .links{display:flex;gap:30px;align-items:center;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-weight:600;}
+  .nav .links a{color:rgba(255,255,255,.9);text-decoration:none;text-shadow:0 1px 8px rgba(0,0,0,.45);transition:opacity .2s ease,color .3s ease,text-shadow .3s ease;}
+  .nav .links a:not(.reserve){position:relative;}
+  .nav .links a:not(.reserve)::after{content:"";position:absolute;left:2px;right:2px;bottom:-5px;height:1.5px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .28s ease;}
+  .nav .links a:not(.reserve):hover::after{transform:scaleX(1);}
+  .nav .links a:hover{opacity:1;}
+  .nav .links .reserve{border:1px solid rgba(255,255,255,.6);padding:9px 18px;border-radius:var(--radius-sm);transition:all .2s ease;}
+  .nav .links .reserve:hover{background:#fff;color:var(--ink);opacity:1;}
+  .nav.solid{background:rgba(247,243,234,.96);box-shadow:0 2px 22px rgba(67,56,43,.09);padding-top:15px;padding-bottom:15px;backdrop-filter:blur(6px);}
+  .nav.solid .links a{color:var(--ink);text-shadow:none;}
+  .nav.solid .links .reserve{border-color:var(--green);color:var(--green);}
+  .nav.solid .links .reserve:hover{background:var(--green);color:#fff;}
+
 </style>
 </head>
 <body>
@@ -644,7 +643,7 @@
     }
     // build a .media div as an HTML string, with optional photo + extra style
     function mediaHtml(url, extra){
-      if(url) return '<div class="media" style="background:#e7e1d4 url(''+esc(url)+'') center/cover no-repeat;'+(extra||'')+'"></div>';
+      if(url) return '<div class="media" style="background:#e7e1d4 url(\''+esc(url)+'\') center/cover no-repeat;'+(extra||'')+'"></div>';
       return '<div class="media dark"'+(extra?' style="'+extra+'"':'')+'></div>';
     }
     // a calm review block (returns '' if no review at this slot)
@@ -797,7 +796,7 @@
                 if(u && (u.toLowerCase().endsWith('.mp4') || u.toLowerCase().endsWith('.webm'))){
                   return '<div class="th' + (i === 0 ? ' active' : '') + '" data-i="' + i + '" style="background-color:#000; position:relative;"><div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:#fff; font-size:10px;">▶</div></div>';
                 }
-                return '<div class="th' + (i === 0 ? ' active' : '') + '" data-i="' + i + '" style="background-image:url('' + esc(u) + '')"></div>'; 
+                return '<div class="th' + (i === 0 ? ' active' : '') + '" data-i="' + i + '" style="background-image:url(\'' + esc(u) + '\')"></div>'; 
               }).join('')
             : '';
           Array.prototype.forEach.call(_elThumbs.querySelectorAll('.th'), function(th){
@@ -821,7 +820,7 @@
       var urls = roomUrls(r);
       var first = urls[0] || null;
       var baseLayer = first
-        ? '<div class="rb-img rb-base" style="background-image:url(''+esc(first)+'')"></div>'
+        ? '<div class="rb-img rb-base" style="background-image:url(\''+esc(first)+'\')"></div>'
         : '<div class="media dark rb-base"></div>';
       var cue = urls.length > 1 ? '<div class="rb-cue"><span class="dot"></span>'+urls.length+' photos</div>' : '';
       // top-left "who fits here" cluster: occupancy + pet policy
@@ -834,7 +833,7 @@
       var hi = (r.highlights && r.highlights.length ? r.highlights : [r.signature]).slice(0, 2)
         .map(function(h){ return '<span class="tag">'+esc(h)+'</span>'; }).join('');
       return ''+
-      '<div class="room-band" data-room="'+esc(r.id)+'" onclick="openRoom(''+r.id+'')">'+
+      '<div class="room-band" data-room="'+esc(r.id)+'" onclick="openRoom(\''+r.id+'\')">'+
         baseLayer+
         '<div class="rb-img rb-top"></div>'+
         '<div class="scrim"></div>'+
@@ -1079,7 +1078,7 @@
           '<a class="btn" href="'+esc(mealHref)+'" target="_blank" rel="noopener" style="text-decoration:none;">Pre-book your meals on WhatsApp</a>';
         mobileBtn.textContent = 'Confirmed'; mobileBtn.disabled = true;
       } else if(st === S.STATUS.DECLINED){
-        cta.innerHTML = '<div class="statusbanner declined"><span class="t">Declined</span>You've let us know this isn't right. Reach out any time to revisit.</div>';
+        cta.innerHTML = '<div class="statusbanner declined"><span class="t">Declined</span>You\'ve let us know this isn\'t right. Reach out any time to revisit.</div>';
         mobileBtn.textContent = 'Declined'; mobileBtn.disabled = true;
       } else if(st === S.STATUS.EXPIRED){
         cta.innerHTML = '<div class="statusbanner expired"><span class="t">This offer has expired</span>The confirmation window has passed. Please contact the resort for a fresh quote.</div>';
@@ -1138,7 +1137,7 @@
     }
     function openWhatsApp(){
       const num = (booking.guest.whatsapp||'').replace(/[^0-9]/g,'');
-      const msg = encodeURIComponent('Hi, I'd like to arrange meals for my Orchid Tree stay.');
+      const msg = encodeURIComponent('Hi, I\'d like to arrange meals for my Orchid Tree stay.');
       window.open('https://wa.me/'+num+'?text='+msg, '_blank');
     }
 
@@ -1277,8 +1276,16 @@
   })();
   </script>
 <script>
-function navScroll(){ if(window.scrollY > 60) nav.classList.add('solid'); else nav.classList.remove('solid'); }
-window.addEventListener('scroll', navScroll, {passive:true}); navScroll();
+window.addEventListener('scroll', function() {
+    var nav = document.getElementById('nav');
+    if (nav) {
+        if (window.scrollY > 50) {
+            nav.classList.add('solid');
+        } else {
+            nav.classList.remove('solid');
+        }
+    }
+});
 </script>
 
 <script>
