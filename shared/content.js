@@ -106,13 +106,7 @@
           { label: "Movies in the multipurpose hall", icon: "film" },
           { label: "Bonfire", icon: "fire" },
           { label: "Stargazing", icon: "star" },
-        ] },
-                { label: "The Commons / Outdoor Activities", items: [
-          { label: "Football", icon: "ball" },
-          { label: "Volleyball", icon: "ball" },
-          { label: "Cricket", icon: "bat" }
-        ] },
-                { label: "The Commons / Outdoor Activities", items: [
+        ] },{ label: "The Commons / Outdoor Activities", items: [
           { label: "Football", icon: "ball" },
           { label: "Volleyball", icon: "ball" },
           { label: "Cricket", icon: "bat" }
@@ -120,8 +114,7 @@
         { label: "Around the estate", items: [
           { label: "Estate Farm Visit — approximately 1 km away", icon: "leaf" },
           { label: "Jungle Walk", icon: "trail" },
-          { label: "Banyan Tree Visit", icon: "leaf" },
-          { label: "Restaurant", icon: "coffee" }
+          { label: "Banyan Tree Visit", icon: "leaf" }
         ] },
       ],
     },

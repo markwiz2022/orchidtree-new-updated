@@ -1,52 +1,34 @@
-import os
-
+import os, re
 filepath = 'guest.html'
 with open(filepath, 'r', encoding='utf-8') as f:
-    html = f.read()
+    content = f.read()
 
-start_idx = html.find('function mgStart(urls){')
-end_idx = html.find("el('mPrev').addEventListener(", start_idx)
+NAV_HTML = '''    <!-- NAV -->
+    <div class="nav" id="nav">
+      <a class="logo" href="index.html" aria-label="Orchid Tree home"><img src="images/logo.png" alt="Orchid Tree"></a>
+      <div class="links">
+        <a href="index.html">Home</a>
+        <a href="stays.html">Stays</a>
+        <a href="experiences.html">Experiences</a>
+        <a href="weddings.html">Weddings</a>
+        <a href="corporate.html">Corporate</a>
+        <a href="about.html">About</a>
+        <a href="https://wa.me/918088251913?text=Hi%20Orchid%20Tree%2C%20I%27d%20like%20to%20enquire%20about%20a%20stay." class="reserve" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>'''
 
-mgStart_correct = """function mgStart(urls){
-      mgStop(); MG.urls = urls || []; MG.i = 0; MG.cur = 0;
-      var layers = mgLayers();
-      var vid = setLayer(layers[0], urls[0]);
-      layers[0].style.opacity = '1';
-      setLayer(layers[1], '');
-      layers[1].style.opacity = '0';
-      urls.forEach(function(u){
-        if(!u.toLowerCase().endsWith('.mp4') && !u.toLowerCase().endsWith('.webm')){
-          var im = new Image(); im.src = u;
-        }
-      });
-      var multi = urls.length > 1;
-      el('mPrev').style.display = multi ? '' : 'none';
-      el('mNext').style.display = multi ? '' : 'none';
-      el('mCount').style.display = multi ? '' : 'none';
-      el('mCount').textContent = '1 / ' + urls.length;
-      var thumbs = el('mThumbs');
-      thumbs.innerHTML = multi
-        ? urls.map(function(u, i){
-            if(u.toLowerCase().endsWith('.mp4') || u.toLowerCase().endsWith('.webm')){
-              return '<div class="th' + (i === 0 ? ' active' : '') + '" data-i="' + i + '" style="background-color:#000; position:relative;"><div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:#fff; font-size:10px;">▶</div></div>';
-            }
-            return '<div class="th' + (i === 0 ? ' active' : '') + '" data-i="' + i + '" style="background-image:url(\\'' + esc(u) + '\\')"></div>';
-          }).join('')
-        : '';
-      Array.prototype.forEach.call(thumbs.querySelectorAll('.th'), function(th){
-        th.addEventListener('click', function(){ mgGo(+th.getAttribute('data-i')); mgTimer(); });
-      });
+if '<div id="page"' in content:
+    content = content.replace('<div id="page" style="display:none;">', '<div id="page" style="display:none;">\n' + NAV_HTML)
 
-      if(vid && multi) {
-        vid.onended = function() { mgGo(MG.i + 1); };
-      } else if(multi) {
-        mgTimer();
-      }
-    }
-    """
-
-html = html[:start_idx] + mgStart_correct + html[end_idx:]
+mobile_css = '''
+@media (max-width: 820px) {
+  .nav { padding: 12px var(--pad); flex-direction: column; gap: 12px; }
+  .nav .links { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; font-size: 10px; }
+}
+'''
+if 'flex-wrap: wrap;' not in content:
+    content = content.replace('</style>', mobile_css + '</style>')
 
 with open(filepath, 'w', encoding='utf-8') as f:
-    f.write(html)
-print("Fixed guest.html")
+    f.write(content)
+print('Fixed guest.html!')
