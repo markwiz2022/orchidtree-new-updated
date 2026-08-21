@@ -315,7 +315,8 @@
 
   <!-- HERO -->
   <section class="hero">
-    <img class="hero-img" src="images/uploads/Experience_section_jpg_afb1c77479.webp" alt="Forest estate near Bangalore set up for a corporate offsite retreat" width="1600" height="1000" fetchpriority="high">
+<img class="hero-img h-back" src="images/uploads/corporate 1.jpeg" alt="Forest estate near Bangalore set up for a corporate offsite retreat" width="1600" height="1000" fetchpriority="high">
+<img class="hero-img h-front" src="images/uploads/corporate 1.jpeg" alt="Forest estate near Bangalore set up for a corporate offsite retreat" width="1600" height="1000" fetchpriority="high">
     <div class="scrim"></div>
     <div class="center">
       <div class="eyebrow">For teams</div>
@@ -585,5 +586,25 @@
     document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
   })();
   </script>
+
+<script>
+(function(){
+  var images = ['images/uploads/corporate 1.jpeg', 'images/uploads/corporate 2.jpeg', 'images/uploads/corporate 3.jpeg', 'images/uploads/for corporate page.jpeg'];
+  var front = document.querySelector('.h-front');
+  var back = document.querySelector('.h-back');
+  if(!front || !back) return;
+  front.style.transition = 'opacity 1.5s ease-in-out';
+  var idx = 0;
+  setInterval(function(){
+    idx = (idx + 1) % images.length;
+    back.src = images[idx];
+    front.style.opacity = 0;
+    setTimeout(function(){
+      front.src = images[idx];
+      front.style.opacity = 1;
+    }, 1500);
+  }, 4000);
+})();
+</script>
 </body>
 </html>

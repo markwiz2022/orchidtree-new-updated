@@ -356,8 +356,8 @@
 
   <!-- 1. HERO -->
   <section class="hero" aria-label="Weddings at Orchid Tree">
-    <!-- PLACEHOLDER: temporary licensed photo (Unsplash). Replace with a real photo from an actual Orchid Tree wedding. Search mood: "intimate outdoor wedding" -->
-    <img class="hero-img" src="images/uploads/gen_wedding_hero.jpg" alt="A couple stand close together at dusk on a wooded estate, the bride holding a loose garden bouquet in low golden light" width="1600" height="1067">
+<img class="hero-img h-back" src="images/uploads/wedding 1.jpeg" alt="A couple stand close together at dusk on a wooded estate, the bride holding a loose garden bouquet in low golden light" width="1600" height="1067">
+<img class="hero-img h-front" src="images/uploads/wedding 1.jpeg" alt="A couple stand close together at dusk on a wooded estate, the bride holding a loose garden bouquet in low golden light" width="1600" height="1067">
     <div class="scrim"></div>
     <div class="center">
       <div class="eyebrow">Weddings at Orchid Tree</div>
@@ -421,19 +421,19 @@
       <div class="space-grid reveal">
         <div class="space">
           <!-- Orchid Tree estate (licensed): the open clearing that becomes the ceremony space -->
-          <div class="ph" style="background-image:url('https://orchidtree.in/uploads/Image8_scaled_jpg_ec00384f49.webp')"></div>
+          <div class="ph" style="background-image:url('images/uploads/image for the wedding venue.jpeg')"></div>
           <div class="scrim"></div>
           <div class="cap"><h3>The open stage</h3><p>An open movement stage that becomes a mandap under the sky.</p></div>
         </div>
         <div class="space">
           <!-- Orchid Tree estate (licensed): the ozone pool -->
-          <div class="ph" style="background-image:url('images/ozone-pool.jpg')"></div>
+          <div class="ph" style="background-image:url('images/uploads/image for the wedding venue 2.jpeg')"></div>
           <div class="scrim"></div>
           <div class="cap"><h3>The forest and pool</h3><p>Cocktails by the water, photos where the light falls through the canopy.</p></div>
         </div>
         <div class="space">
           <!-- Orchid Tree estate (licensed): a sheltered indoor gathering space -->
-          <div class="ph" style="background-image:url('https://orchidtree.in/uploads/Copy_of_2_a5beee287f.jpg')"></div>
+          <div class="ph" style="background-image:url('images/uploads/image for the wedding venue 3.jpeg')"></div>
           <div class="scrim"></div>
           <div class="cap"><h3>The multi-purpose hall</h3><p>A sheltered room for the sangeet, the dinner, the dancing that runs late.</p></div>
         </div>
@@ -728,5 +728,25 @@
   })();
   </script>
 
+
+<script>
+(function(){
+  var images = ['images/uploads/wedding 1.jpeg', 'images/uploads/wedding 2.jpeg'];
+  var front = document.querySelector('.h-front');
+  var back = document.querySelector('.h-back');
+  if(!front || !back) return;
+  front.style.transition = 'opacity 1.5s ease-in-out';
+  var idx = 0;
+  setInterval(function(){
+    idx = (idx + 1) % images.length;
+    back.src = images[idx];
+    front.style.opacity = 0;
+    setTimeout(function(){
+      front.src = images[idx];
+      front.style.opacity = 1;
+    }, 1500);
+  }, 4000);
+})();
+</script>
 </body>
 </html>
